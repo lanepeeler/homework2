@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 22, 2016, 6:37:31 PM
+    Author     : epeeler and nathan young
+*/
+
+form label{
+    display: inline-block;
+    text-align: right;
+    width: 14%;
+
+}
+form [type='submit']{
+    background-color: gray;
+    margin-top: 1%;
+    margin-bottom:3%;
+    width: 20%;
+
+}
+form input{
+    width: 60%;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:2px;
+}
