@@ -8,22 +8,35 @@ and open the template in the editor.
     Author     : epeeler and nathan young
 */
 
+h1 { 
+  color: navy;
+  font-size: 38px;
+}
+body {
+  font-family: helvetica, sans-serif;
+  border: .2em solid navy;
+}
+
 form label{
-    display: inline-block;
-    text-align: right;
-    width: 14%;
+  display: inline-block;
+  text-align: right;
+  width: 14%;
 
 }
 form [type='submit']{
-    background-color: gray;
-    margin-top: 1%;
-    margin-bottom:3%;
-    width: 20%;
+  background-color: gray;
+  margin-top: 1%;
+  margin-bottom:3%;
+  width: 20%;
 
 }
 form input{
-    width: 60%;
-    margin-left:5%;
-    margin-right:5%;
-    margin-top:2px;
+  width: 60%;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:2px;
+}
+#footer {
+  padding-top: 1em;
+  border-top: .2em solid navy;
 }
