@@ -5,7 +5,6 @@
  */
 package edu.elon.calculate;
 
-import java.text.DecimalFormat;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -64,8 +63,6 @@ public class CalculateServlet extends HttpServlet {
       String investAmt = request.getParameter("investment-amount");
       String interestRate = request.getParameter("interest-rate");
       String numYears = request.getParameter("number-years");
-      
-      DecimalFormat df = new DecimalFormat("$.00");
       
       double inv = Double.parseDouble(investAmt);
       double intr = Double.parseDouble(interestRate);
