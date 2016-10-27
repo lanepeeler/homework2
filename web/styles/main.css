@@ -34,6 +34,12 @@ form label {
 
 }
 
+.calc-label {
+  display: inline-block;
+  text-align: right;
+  width: 46%;
+}
+
 form input {
   margin: 0;
   margin-left: 1.7%;
@@ -47,6 +53,11 @@ form [type='submit'] {
   padding: .3em 1%;
   width: 14%;
 }
+
+span {
+    margin-left: 2%;
+    text-align: left;
+  }
 
 /* Footer */
 #footer {
