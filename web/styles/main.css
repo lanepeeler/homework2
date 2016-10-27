@@ -28,6 +28,7 @@ body p {
 }
 
 form label {
+  display: inline-block;
   text-align: right;
   width: 38%;
 
