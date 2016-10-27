@@ -1,42 +1,141 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Oct 22, 2016, 6:37:31 PM
-    Author     : epeeler and nathan young
-*/
+/* 2016 © Lane Peeler & Nathan Young */
 
-h1 { 
-  color: navy;
-  font-size: 38px;
-}
+/* Body */
 body {
+  border: .2em solid #000099;
   font-family: helvetica, sans-serif;
-  border: .2em solid navy;
+  margin: .3% auto 0;
+  width: 700px;
 }
 
-form label{
-  display: inline-block;
+/* Header */
+h1 {
+  color: #000099;
+  font-size: 1.8em;
+  margin-left: 1.1em;
+  margin-top: 1.5em;
+}
+
+h1 br {
+  display: none;
+}
+
+/* Form */
+body p {
+  font-size: 1.1em;
+  margin-bottom: .5%;
+  margin-top: 0;
+}
+
+form label {
   text-align: right;
+  width: 38%;
+
+}
+
+form input {
+  margin: 0;
+  margin-left: 1.7%;
+  width: 45%;
+}
+
+form [type='submit'] {
+  background-color: lightgray;
+  border: 1px solid #999999;
+  margin-bottom: 3%;
+  padding: .3em 1%;
   width: 14%;
+}
 
-}
-form [type='submit']{
-  background-color: gray;
-  margin-top: 1%;
-  margin-bottom:3%;
-  width: 20%;
-
-}
-form input{
-  width: 60%;
-  margin-left:5%;
-  margin-right:5%;
-  margin-top:2px;
-}
+/* Footer */
 #footer {
+  border-top: .2em solid #000099;
+  padding-bottom: 1em;
+  padding-left: 1.7em;
   padding-top: 1em;
-  border-top: .2em solid navy;
+}
+
+/* RWD */
+@media only screen and (max-width: 400px) {
+  /* Body */
+  body {
+    max-width: 390px;
+    width: 95%;
+  }
+  
+  /* Header */
+  h1 {
+    font-size: 1.3em;
+    margin-left: 1.4em;
+    margin-top: 1.8em;
+  }
+  
+  h1 br {
+    display: block;
+  }
+  
+  /* Form */
+  body p {
+    font-size: .9em;
+  }
+  
+  form label {
+    margin-left: 15%;
+    text-align: left;
+    width: 100%;
+  }
+  
+  #blank-label {
+    display: none;
+  }
+  
+  form input {
+    border: 1px solid lightgray;
+    display: block;
+    font-size: .9em;
+    margin-bottom: 2%;
+    margin-left: 15%;
+    padding: 3% .5%;
+    width: 60%;
+  }
+  
+  form [type='submit'] {
+    width: 30%;
+  }
+  
+  /* calculate.jsp */
+  /* Calculate Body */
+  #calc-body {
+    font-size: .9em;
+  }
+  
+  /* Calculate Header */
+  #calc-h1 {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    margin-top: 2.2em;
+  }
+  
+  #calc-h1 br {
+    display: none;
+  }
+  
+  /* Calculate "Form" */
+  .calc-label {
+    display: inline-block;
+    margin-bottom: .6%;
+    text-align: right;
+    width: 59%;
+  }
+  
+  #future-value {
+    margin-bottom: 4%;
+  }
+  
+  span {
+    margin-left: 3.5%;
+    text-align: left;
+  }
+  
 }

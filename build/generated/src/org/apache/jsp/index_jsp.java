@@ -54,8 +54,13 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
       if (_jspx_meth_c_import_0(_jspx_page_context))
         return;
+      out.write("\n");
+      out.write("<body>\n");
+      out.write("<h1>Future Value <br>Calculator</h1>\n");
       out.write("\n");
       out.write("<form action=\"calculate\" method=\"post\">\n");
       out.write("  <input type=\"hidden\" name=\"action\" value=\"compute\">\n");
@@ -64,7 +69,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <p><label>Investment Amount</label> \n");
       out.write("    <input type=\"text\" name=\"investment-amount\" \n");
       out.write("           title=\"Positive integer or number to 2 decimal places required\"\n");
-      out.write("           pattern=\"^\\d*(\\.\\d{2}$)?\" autofocus required> </p>\n");
+      out.write("           pattern=\"^\\d*(\\.\\d{2}$)?\" required> </p>\n");
       out.write("  <p><label>Yearly Interest Rate</label>\n");
       out.write("    <input type=\"text\" name=\"interest-rate\" \n");
       out.write("           title=\"Positive integer or decimal required\"\n");
@@ -73,9 +78,10 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <input type=\"text\" name=\"number-years\" pattern=\"\\d+\"\n");
       out.write("           title=\"Positive integer required\" required \n");
       out.write("           placeholder=\"Integer number of years\"> </p>\n");
-      out.write("  <p><label>&nbsp;</label>\n");
+      out.write("  <p><label id=\"blank-label\">&nbsp;</label>\n");
       out.write("    <input type=\"submit\" name=\"submit\" value=\"Calculate\"></p>\n");
       out.write("</form>\n");
+      out.write("\n");
       if (_jspx_meth_c_import_1(_jspx_page_context))
         return;
       out.write('\n');
@@ -126,7 +132,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     org.apache.taglibs.standard.tag.rt.core.ImportTag _jspx_th_c_import_1 = (org.apache.taglibs.standard.tag.rt.core.ImportTag) _jspx_tagPool_c_import_url_nobody.get(org.apache.taglibs.standard.tag.rt.core.ImportTag.class);
     _jspx_th_c_import_1.setPageContext(_jspx_page_context);
     _jspx_th_c_import_1.setParent(null);
-    _jspx_th_c_import_1.setUrl("includes/footer.jsp");
+    _jspx_th_c_import_1.setUrl("includes/footer.html");
     int[] _jspx_push_body_count_c_import_1 = new int[] { 0 };
     try {
       int _jspx_eval_c_import_1 = _jspx_th_c_import_1.doStartTag();
