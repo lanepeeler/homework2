@@ -2,7 +2,13 @@
 
 package edu.elon.calculate;
 
+import edu.elon.bean.Bean;
 import java.io.IOException;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -51,31 +57,53 @@ public class CalculateServlet extends HttpServlet {
       url = "/index.jsp";
     } //If comes from form, extract info, add to request, send to "submitted" page
     else if (action.equals("compute")) {
-      // get parameters from the request
+      // direct to calculate.jsp
       url = "/calculate.jsp";
+      
+      // get parameters from the request
       String investAmt = request.getParameter("investment-amount");
       String interestRate = request.getParameter("interest-rate");
       String numYears = request.getParameter("number-years");
       
-      double inv = Double.parseDouble(investAmt);
-      double intr = Double.parseDouble(interestRate);
-      double intrCalc = 1 + (intr/100);
+      // convert Strings to numbers and calculate future value
+      double invAmt = Double.parseDouble(investAmt);
+      double intRate = Double.parseDouble(interestRate);
+      double intrCalc = 1 + (intRate/100);
       int yrs = Integer.parseInt(numYears);
-      double futureValue = inv * Math.pow(intrCalc, yrs);
+      double futureValue = invAmt * Math.pow(intrCalc, yrs);
       
-      String s = String.format("%.2f", inv);
-      String t = String.format("%.1f", intr);
+      // format so money values report two decimal places
+      // and interest value reports one decimal place
+      // convert back to numbers
+//      NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
+      
+      String s = String.format("%.2f", invAmt);
+//      String s = nf.format(invAmt);
+//      String[] num = s.split(",");
+      invAmt = Double.parseDouble(s);
+      String t = String.format("%.1f", intRate);
+//      String t = nf.format(intRate);
+      intRate = Double.parseDouble(t);
       String r = String.format("%.2f", futureValue);
+//      String r = nf.format(futureValue);
+      futureValue = Double.parseDouble(r);
+
       
-      request.setAttribute("investAmt", s);
-      request.setAttribute("interestRate", t);
-      request.setAttribute("numYears", yrs);
-      request.setAttribute("futureValue", r);
+      // store data in Bean object
+      Bean bean = new Bean(invAmt, intRate, yrs, futureValue);
       
-      System.out.println("The invest amount value is: " + investAmt);
-      System.out.println("The interestRate value is:" + interestRate);
-      System.out.println("The years value is: " + numYears);
-      System.out.println("The action value is: " + action);
+      // set Bean object in request object
+      request.setAttribute("bean", bean);
+      
+//      request.setAttribute("investAmt", invAmt);
+//      request.setAttribute("interestRate", intRate);
+//      request.setAttribute("numYears", yrs);
+//      request.setAttribute("futureValue", futureValue);
+      
+//      System.out.println("The invest amount value is: " + investAmt);
+//      System.out.println("The interestRate value is: " + interestRate);
+//      System.out.println("The years value is: " + numYears);
+//      System.out.println("The action value is: " + action);
     }
     getServletContext()
             .getRequestDispatcher(url)

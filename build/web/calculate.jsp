@@ -6,13 +6,14 @@
 <body id="calc-body">
 <h1 id="calc-h1">Future Value <br>Calculator</h1>
 
+<jsp:useBean id="bean" scope="request" class="edu.elon.bean.Bean"/>
   <label class="calc-label">Investment Amount:</label> 
-  <span>&dollar;${investAmt}</span><br>
+  <span>&dollar;<jsp:getProperty name="bean" property="investAmt"/></span><br>
   <label class="calc-label">Yearly Interest Rate:</label>
-  <span>${interestRate}</span><br>
+  <span><jsp:getProperty name="bean" property="interestRate"/></span><br>
   <label class="calc-label">Number of Years:</label>
-  <span>${numYears}</span><br>
+  <span><jsp:getProperty name="bean" property="numYears"/></span><br>
   <label class="calc-label" id="future-value">Future Value:</label>
-  <span>&dollar;${futureValue}</span><br>
+  <span>&dollar;<jsp:getProperty name="bean" property="futureValue"/></span><br>
 
 <c:import url="includes/footer.html"/>
