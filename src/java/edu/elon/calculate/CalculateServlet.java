@@ -4,19 +4,17 @@ package edu.elon.calculate;
 
 import edu.elon.bean.Bean;
 import java.io.IOException;
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.util.Locale;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/*
+Controls the flow between the view files and the Bean business object
+Also handles http requests and small calculations
+*/
 public class CalculateServlet extends HttpServlet {
 
-  // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
   /**
    * Handles the HTTP <code>GET</code> method.
    *
@@ -44,7 +42,7 @@ public class CalculateServlet extends HttpServlet {
           throws ServletException, IOException {
 
     String url = "/index.jsp";
-
+    
     // get current action
     String action = request.getParameter("action");
 
@@ -72,42 +70,14 @@ public class CalculateServlet extends HttpServlet {
       int yrs = Integer.parseInt(numYears);
       double futureValue = invAmt * Math.pow(intrCalc, yrs);
       
-      // format so money values report two decimal places
-      // and interest value reports one decimal place
-      // convert back to numbers
-//      NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
-      
-      String s = String.format("%.2f", invAmt);
-//      String s = nf.format(invAmt);
-//      String[] num = s.split(",");
-      invAmt = Double.parseDouble(s);
-      String t = String.format("%.1f", intRate);
-//      String t = nf.format(intRate);
-      intRate = Double.parseDouble(t);
-      String r = String.format("%.2f", futureValue);
-//      String r = nf.format(futureValue);
-      futureValue = Double.parseDouble(r);
-
-      
       // store data in Bean object
       Bean bean = new Bean(invAmt, intRate, yrs, futureValue);
       
       // set Bean object in request object
       request.setAttribute("bean", bean);
       
-//      request.setAttribute("investAmt", invAmt);
-//      request.setAttribute("interestRate", intRate);
-//      request.setAttribute("numYears", yrs);
-//      request.setAttribute("futureValue", futureValue);
-      
-//      System.out.println("The invest amount value is: " + investAmt);
-//      System.out.println("The interestRate value is: " + interestRate);
-//      System.out.println("The years value is: " + numYears);
-//      System.out.println("The action value is: " + action);
     }
-    getServletContext()
-            .getRequestDispatcher(url)
-            .forward(request, response);
+    getServletContext().getRequestDispatcher(url).forward(request, response);
 
   }
 
