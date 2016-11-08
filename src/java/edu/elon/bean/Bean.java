@@ -26,7 +26,7 @@ public class Bean implements Serializable {
         interestRate = 0;
         numYears = 0;
         futureValue = 0;
-        nf = NumberFormat.getNumberInstance(Locale.US);
+        nf = NumberFormat.getCurrencyInstance();
     }
     
     /*
@@ -41,7 +41,7 @@ public class Bean implements Serializable {
         this.interestRate = interestRate;
         this.numYears = numYears;
         this.futureValue = futureValue;
-        nf = NumberFormat.getNumberInstance(Locale.US);
+        nf = NumberFormat.getCurrencyInstance();
     }
 
     /**
@@ -49,13 +49,7 @@ public class Bean implements Serializable {
      * @return the investAmt
      */
     public String getInvestAmt() {
-        String s = nf.format(investAmt);
-        if (!s.contains(".")) {
-            s = s + ".00";
-        } else if (s.indexOf(".")+1 == s.length()-1) {
-            s = s + "0";
-        }
-        return s;
+        return nf.format(investAmt);
     }
 
     /**
@@ -98,17 +92,7 @@ public class Bean implements Serializable {
      * @return the futureValue
      */
     public String getFutureValue() {
-        String s = nf.format(futureValue);
-        int length = s.length();
-        if (s.indexOf(".")+3 == length-1) {
-            int last = Integer.parseInt(s.substring(length-1));
-            int second = Integer.parseInt(s.substring(length-2, length-1));
-            if (last >= 5) {
-                second++;
-            }
-            s = s.substring(0, length-2) + second;
-        }
-        return s;
+        return nf.format(futureValue);
     }
 
     /**
