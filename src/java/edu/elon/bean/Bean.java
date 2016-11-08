@@ -4,7 +4,6 @@ package edu.elon.bean;
 
 import java.io.Serializable;
 import java.text.NumberFormat;
-import java.util.Locale;
 
 /*
 Bean used for holding the datamembers Investment Amount, Yearly Interest Rate, 
@@ -15,7 +14,6 @@ public class Bean implements Serializable {
     private double interestRate;
     private int numYears;
     private double futureValue;
-    private NumberFormat nf;
     
     /*
     Constructor taking no arguments, setting instance variables to 0 and 
@@ -26,7 +24,6 @@ public class Bean implements Serializable {
         interestRate = 0;
         numYears = 0;
         futureValue = 0;
-        nf = NumberFormat.getCurrencyInstance();
     }
     
     /*
@@ -41,15 +38,14 @@ public class Bean implements Serializable {
         this.interestRate = interestRate;
         this.numYears = numYears;
         this.futureValue = futureValue;
-        nf = NumberFormat.getCurrencyInstance();
     }
 
     /**
      * Gets the formatted investment amount with commas and period in correct place
      * @return the investAmt
      */
-    public String getInvestAmt() {
-        return nf.format(investAmt);
+    public double getInvestAmt() {
+        return investAmt;
     }
 
     /**
@@ -91,8 +87,8 @@ public class Bean implements Serializable {
      * Gets the formatted future value
      * @return the futureValue
      */
-    public String getFutureValue() {
-        return nf.format(futureValue);
+    public double getFutureValue() {
+        return futureValue;
     }
 
     /**
