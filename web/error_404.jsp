@@ -11,4 +11,3 @@
     To continue, click the Back button.</p>    
 
   <c:import url="includes/footer.html"/>
-  

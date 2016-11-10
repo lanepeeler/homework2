@@ -1,4 +1,4 @@
-/* 2016 © Lane Peeler & Nathan Young */
+/* 2016 © Lane Peeler, Nathan Young, & Jasmine Jones */
 
 /* Body */
 body {
@@ -25,6 +25,10 @@ body p {
   font-size: 1.1em;
   margin-bottom: .5%;
   margin-top: 0;
+}
+
+.break {
+  display: none;
 }
 
 form label {
@@ -54,21 +58,54 @@ form [type='submit'] {
   width: 14%;
 }
 
-#future-value {
-    margin-bottom: 3%;
-  }
+.future-value {
+  display: none;
+}
 
 span {
-    margin-left: 2%;
-    text-align: left;
-  }
-  
-  
-  /* Error Page */
-  #error-message {
-    margin-bottom: 1.1em;
-    margin-left: 1.8em;
-  }
+  margin-left: 2%;
+  text-align: left;
+}
+
+/* Table */
+/*table, th, td {
+  border: 1px solid black;
+}*/
+
+table {
+  border-collapse: collapse;
+  margin-left: 33.4%;
+  width: 30%;
+}
+
+th {
+  text-align: left;
+}
+
+#yr-head {
+  width: 2%;
+}
+
+#val-head {
+  width: 50%;
+}
+
+#yr {
+  text-align: right;
+}
+
+a {
+  display: block;
+  margin-top: 1%;
+  margin-left: 33.4%;
+  margin-bottom: 2%;
+}
+
+/* Error Page */
+#error-message {
+  margin-bottom: 1.1em;
+  margin-left: 1.8em;
+}
 
 /* Footer */
 #footer {
@@ -76,6 +113,7 @@ span {
   padding-bottom: 1em;
   padding-left: 1.7em;
   padding-top: 1em;
+  margin-bottom: 0;
 }
 
 /* RWD */
@@ -85,33 +123,33 @@ span {
     max-width: 390px;
     width: 95%;
   }
-  
+
   /* Header */
   h1 {
     font-size: 1.3em;
     margin-left: 1.4em;
     margin-top: 1.8em;
   }
-  
+
   h1 br {
     display: block;
   }
-  
+
   /* Form */
   body p {
-    font-size: .9em;
+    font-size: 1em;
   }
-  
+
   form label {
     margin-left: 15%;
     text-align: left;
     width: 100%;
   }
-  
+
   #blank-label {
     display: none;
   }
-  
+
   form input {
     border: 1px solid lightgray;
     display: block;
@@ -121,43 +159,63 @@ span {
     padding: 3% .5%;
     width: 60%;
   }
-  
+
   form [type='submit'] {
     width: 30%;
   }
-  
+
   /* calculate.jsp */
   /* Calculate Body */
   #calc-body {
-    font-size: .9em;
+    font-size: 1em;
   }
-  
+
   /* Calculate Header */
   #calc-h1 {
-    font-size: 1.2em;
+    font-size: 1.4em;
     margin-bottom: 1em;
-    margin-left: 2em;
+    margin-left: 12%;
     margin-top: 2.2em;
   }
-  
-  #calc-h1 br {
-    display: none;
-  }
-  
+
   /* Calculate "Form" */
   .calc-label {
     display: inline-block;
     margin-bottom: .6%;
-    text-align: right;
-    width: 59%;
-  }
-  
-  #future-value {
-    margin-bottom: 4%;
-  }
-  
-  span {
-    margin-left: 3.5%;
+    margin-left: 12%;
     text-align: left;
+    width: 36%;
+  }
+
+  .future-value {
+    display: none;
+  }
+
+  span {
+    width: 5%;
+    text-align: left;
+  }
+  
+  .break {
+    display: block;
+  }
+  
+  /* Table */
+/*  table, th, td {
+  border: 1px solid black;
+  }*/
+  
+  table {
+    margin-left: 12%;
+    width: 70%;
+  }
+  
+  #mid {
+    width: 22%;
+  }
+  
+  a {
+    margin-left: 12%;
+    margin-bottom: 3.5%;
   }
 }
