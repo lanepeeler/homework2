@@ -7,7 +7,8 @@
 
 <body>
   <h1>404 Error</h1>
-  <p id="error-message">The server was not able to find the file you requested. <br>
+  <p id="error-message">The server was not able to find the file 
+    you requested. <br>
     To continue, click the Back button.</p>    
 
   <c:import url="includes/footer.html"/>

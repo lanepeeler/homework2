@@ -16,7 +16,6 @@
   <label class="calc-label">Number of Years:</label>
   <span>${bean.numYears}</span><br>
   <label class="calc-label future-value">Future Value:</label>
-  <span class="future-value"><elon:currencyFormat value="${bean.futureValue}"/></span><br>
   <table>
     <tr>
       <th id="yr-head">Year</th>

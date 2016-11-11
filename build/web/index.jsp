@@ -15,11 +15,14 @@
     <p><label>Investment Amount</label> 
       <input type="text" name="investment-amount" 
              title="Positive integer or number to 2 decimal places required"
-             pattern="^\d*(\.\d{2}$)?" required value="${sessionScope.invest}"> </p>
+             pattern="^\d*(\.\d{2}$)?" required 
+             value="${sessionScope.invest}"> 
+    </p>
     <p><label>Yearly Interest Rate</label>
       <input type="text" name="interest-rate" 
              title="Positive integer or decimal required"
-             pattern="\d+[.]?\d*" required value="${sessionScope.interest}"></p>
+             pattern="\d+[.]?\d*" required value="${sessionScope.interest}">
+    </p>
     <p><label>Number of Years</label>
       <input type="text" name="number-years" pattern="\d+"
              title="Positive integer required" required 

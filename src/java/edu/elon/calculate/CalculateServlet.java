@@ -25,7 +25,8 @@ public class CalculateServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, 
+            HttpServletResponse response)
             throws ServletException, IOException {
         doPost(request, response);
     }
@@ -39,7 +40,8 @@ public class CalculateServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, 
+            HttpServletResponse response)
             throws ServletException, IOException {
 
         String url = "/index.jsp";
@@ -54,7 +56,8 @@ public class CalculateServlet extends HttpServlet {
         // if comes from another source, redirect to index.jsp
         if (action.equals("input")) {
             url = "/index.jsp";
-        } // if comes from form, extract info, add to request, send to "submitted" page
+        } // if comes from form, extract info, add to request, send to 
+         //"submitted" page
         else if (action.equals("compute")) {
             // direct to calculate.jsp
             url = "/calculate.jsp";
@@ -88,7 +91,8 @@ public class CalculateServlet extends HttpServlet {
             session.setAttribute("map", collection);
 
         }
-        getServletContext().getRequestDispatcher(url).forward(request, response);
+        getServletContext().getRequestDispatcher(url).
+                forward(request, response);
 
     }
 

@@ -43,7 +43,9 @@ public class Bean implements Serializable {
         futureValue = calculate(investAmt, interestRate, numYears);
     }
 
-    public double calculate(double investAmt, double interestRate, int numYears) {
+    public double calculate(double investAmt, double interestRate, 
+            int numYears)
+    {
         double intrCalc = 1 + (interestRate / 100);
         setFutureValue(investAmt * Math.pow(intrCalc, numYears));
         return getFutureValue();
